@@ -1,14 +1,11 @@
 ﻿<Properties StartupConfiguration="{E01F6BD2-AC69-40E5-B6C6-803B0161D681}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Combinatorics_Calculator/Program.cs">
-    <Files>
-      <File FileName="Combinatorics_Calculator/Program.cs" Line="133" Column="10" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Combinatorics_Calculator" expanded="True">
             <Node name="Combinatorics_Calculator" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Dependencies" selected="True" />
             </Node>
           </Node>
         </State>
