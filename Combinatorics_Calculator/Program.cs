@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 namespace Combinatorics_Calculator
 {
     class Program
@@ -21,15 +19,14 @@ namespace Combinatorics_Calculator
             var result = new double();
             int caseSwitch = new int();
 
-
         start:
-            Console.WriteLine("Выбераите между разные опции");
-            Console.WriteLine("Для сочетание без повторений, 1 ");
-            Console.WriteLine("Для сочетание с повторениями, 2 ");
-            Console.WriteLine("Для размещение без повторени, 3 ");
-            Console.WriteLine("Для размещение с повторениямий, 4 ");
-            Console.WriteLine("Для перестановка без повторений, 5 ");
-            Console.WriteLine("Для перестановка с повторениями, 6 ");
+            Console.WriteLine("Выберите между разними опции");
+            Console.WriteLine("Для сочетаний без повторений, 1 ");
+            Console.WriteLine("Для сочетаний с повторениями, 2 ");
+            Console.WriteLine("Для размещений без повторени, 3 ");
+            Console.WriteLine("Для размещений с повторениямий, 4 ");
+            Console.WriteLine("Для перестановки без повторений, 5 ");
+            Console.WriteLine("Для перестановки с повторениями, 6 ");
 
 
             caseSwitch = int.Parse(Console.ReadLine());
@@ -37,7 +34,7 @@ namespace Combinatorics_Calculator
             switch (caseSwitch)
             {
                 case 1:
-                    Console.WriteLine("Сколько элементов во множестве? ");
+                    Console.WriteLine("Сколько элементов в множестве? ");
                     n = int.Parse(Console.ReadLine());
                     Console.WriteLine("Сколько элементов в наборе? ");
                     m = int.Parse(Console.ReadLine());
@@ -45,8 +42,11 @@ namespace Combinatorics_Calculator
                     Console.WriteLine("Ответ; {0}", result);
                     Console.ReadLine();
                     break;
+
+
                 case 2:
-                    Console.WriteLine("Сколько элементов во множестве? ");
+
+                    Console.WriteLine("Сколько элементов в множестве? ");
                     n = int.Parse(Console.ReadLine());
                     Console.WriteLine("Сколько элементов в наборе? ");
                     m = int.Parse(Console.ReadLine());
@@ -54,8 +54,11 @@ namespace Combinatorics_Calculator
                     Console.WriteLine("Ответ; {0}", result);
                     Console.ReadLine();
                     break;
+
+
                 case 3:
-                    Console.WriteLine("Сколько элементов во множестве? ");
+
+                    Console.WriteLine("Сколько элементов в множестве? ");
                     n = int.Parse(Console.ReadLine());
                     Console.WriteLine("Сколько элементов в наборе? ");
                     m = int.Parse(Console.ReadLine());
@@ -63,8 +66,11 @@ namespace Combinatorics_Calculator
                     Console.WriteLine("Ответ; {0}", result);
                     Console.ReadLine();
                     break;
+
+
                 case 4:
-                    Console.WriteLine("Сколько элементов во множестве? ");
+
+                    Console.WriteLine("Сколько элементов в множестве? ");
                     n = int.Parse(Console.ReadLine());
                     Console.WriteLine("Сколько элементов в наборе? ");
                     m = int.Parse(Console.ReadLine());
@@ -73,35 +79,43 @@ namespace Combinatorics_Calculator
                     Console.ReadLine();
                     break;
 
+
                 case 5:
-                    Console.WriteLine("Сколько элементов во множестве? ");
+
+                    Console.WriteLine("Сколько элементов в множестве? ");
                     n = int.Parse(Console.ReadLine());
                     result = CalcFactorial(n);
                     Console.WriteLine("Ответ; {0}", result);
                     Console.ReadLine();
                     break;
+
+
                 case 6:
-                    Console.WriteLine("Сколько элементов во множестве? ");
-                    n = int.Parse(Console.ReadLine());
-                    string text; 
+
+                    string text;
                     List<string> Simbols = new List<string>();
-
-                //    Console.WriteLine("Add each of the simbols of the arrange");
-
-                  //  for (int i = 0; i < n; i++) Simbols.Add(Console.ReadLine());
-
-                    Console.WriteLine("Add text with all the letters");
-                    text = Console.ReadLine();
-                    string[] textArray = text.Split();
-                    for (int i = 0; i < textArray.Length; i++)
+                    Console.WriteLine("Для введения символов в строку введите 1");
+                    Console.WriteLine("Для введения слов введения любой номер");
+                    if (int.Parse(Console.ReadLine()) == 1)
                     {
-                        Console.WriteLine(textArray[i]);
-                        Console.WriteLine(i);
+                        Console.WriteLine("Введите символы");
+                        text = Console.ReadLine();
+                        foreach (var letter in text)
+                        {
+                            Simbols.Add(letter.ToString());
+                        }
+                        n = Simbols.Count;
                     }
-                    foreach (var letter in textArray)
-                    {
-                        Simbols.Add(letter);  
+                    else { 
+                    Console.WriteLine("Сколько элементов в множестве? ");
+                        n = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Введите каждый слов");
+                        for (int i = 0; i < n; i++)
+                        {
+                            Simbols.Add(Console.ReadLine()); 
+                        }
                     }
+
                     var quantity = new List<int> { };
 
                     List<string> separatedSimbols = new List<string>();
@@ -126,10 +140,10 @@ namespace Combinatorics_Calculator
                         }
                     }
 
-                    Console.WriteLine("Different type of simbols on your arrange");
+                    Console.WriteLine("Разные симболы в массиве");
                     separatedSimbols.ForEach(i => Console.WriteLine(i));
 
-                    Console.WriteLine("Cuantity of each of them, in the same order");
+                    Console.WriteLine("Количество, из каждого из них");
                     quantity.ForEach(i => Console.WriteLine(i));
 
                     result = 1;
@@ -139,9 +153,13 @@ namespace Combinatorics_Calculator
                     Console.ReadLine();
                     break;
                 default:
-                    Console.WriteLine("Ошибка, непраильный ввод");
+
+                    Console.WriteLine("Ошибка, неправильный ввод");
                     goto start;
             }
+
+            Console.WriteLine("Для нового вычичления нажмите 1, чтобы закрыть программу нажмите любой номер");
+            if (int.Parse(Console.ReadLine()) == 1) goto start;
         }
     }
 }
