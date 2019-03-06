@@ -83,14 +83,26 @@ namespace Combinatorics_Calculator
                 case 6:
                     Console.WriteLine("Сколько элементов во множестве? ");
                     n = int.Parse(Console.ReadLine());
-
+                    string text; 
                     List<string> Simbols = new List<string>();
 
-                    Console.WriteLine("Add each of the simbols of the arrange");
+                //    Console.WriteLine("Add each of the simbols of the arrange");
 
-                    for (int i = 0; i < n; i++) Simbols.Add(Console.ReadLine());
+                  //  for (int i = 0; i < n; i++) Simbols.Add(Console.ReadLine());
 
-                    var cuantity = new List<int> { };
+                    Console.WriteLine("Add text with all the letters");
+                    text = Console.ReadLine();
+                    string[] textArray = text.Split();
+                    for (int i = 0; i < textArray.Length; i++)
+                    {
+                        Console.WriteLine(textArray[i]);
+                        Console.WriteLine(i);
+                    }
+                    foreach (var letter in textArray)
+                    {
+                        Simbols.Add(letter);  
+                    }
+                    var quantity = new List<int> { };
 
                     List<string> separatedSimbols = new List<string>();
 
@@ -101,7 +113,7 @@ namespace Combinatorics_Calculator
                             if (!separatedSimbols.Contains(simbol))
                             {
                                 separatedSimbols.Add(simbol);
-                                cuantity.Add(0);
+                                quantity.Add(0);
                             }
                         }
                     }
@@ -110,18 +122,18 @@ namespace Combinatorics_Calculator
                     {
                         foreach (var simbol in Simbols)
                         {
-                            if (separatedSimbols[i] == simbol) cuantity[i]++;
+                            if (separatedSimbols[i] == simbol) quantity[i]++;
                         }
                     }
 
-                    Console.WriteLine("Diferent type of simbols on your arrange");
+                    Console.WriteLine("Different type of simbols on your arrange");
                     separatedSimbols.ForEach(i => Console.WriteLine(i));
 
                     Console.WriteLine("Cuantity of each of them, in the same order");
-                    cuantity.ForEach(i => Console.WriteLine(i));
+                    quantity.ForEach(i => Console.WriteLine(i));
 
                     result = 1;
-                    cuantity.ForEach(i => result = result * i);
+                    quantity.ForEach(i => result = result * i);
                     result = CalcFactorial(n) / result;
                     Console.WriteLine("Ответ; {0}", result);
                     Console.ReadLine();
