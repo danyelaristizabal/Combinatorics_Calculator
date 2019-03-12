@@ -688,9 +688,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/danielaristizabaljaramillo/Projects/Combinatorics_Calculator/Combinatorics_Calculator/Combinatorics_Calculator.csproj",
-      "projectName": "Combinatorics_Calculator",
-      "projectPath": "/Users/danielaristizabaljaramillo/Projects/Combinatorics_Calculator/Combinatorics_Calculator/Combinatorics_Calculator.csproj",
+      "projectUniqueName": "/Users/danielaristizabaljaramillo/Projects/Combinatorics_Calculator/Combinatorics_Calculator/CombinatoricsCalculatorConsole.csproj",
+      "projectName": "CombinatoricsCalculatorConsole",
+      "projectPath": "/Users/danielaristizabaljaramillo/Projects/Combinatorics_Calculator/Combinatorics_Calculator/CombinatoricsCalculatorConsole.csproj",
       "packagesPath": "/Users/danielaristizabaljaramillo/.nuget/packages/",
       "outputPath": "/Users/danielaristizabaljaramillo/Projects/Combinatorics_Calculator/Combinatorics_Calculator/obj/",
       "projectStyle": "PackageReference",

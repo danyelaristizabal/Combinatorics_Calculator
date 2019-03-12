@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq; 
 namespace Combinatorics_Calculator
 {
-    class Program
+    class Program // create new project Probability Calculator
     {
         static public int CalcFactorial(int number)
         {
@@ -145,9 +146,10 @@ namespace Combinatorics_Calculator
 
                     Console.WriteLine("Количество, из каждого из них");
                     quantity.ForEach(i => Console.WriteLine(i));
-
                     result = 1;
-                    quantity.ForEach(i => result = result * i);
+                    List<int> quantitywithfactorials = new List<int>(); 
+                    quantity.ForEach(i => quantitywithfactorials.Add(CalcFactorial(i)));
+                    quantitywithfactorials.ForEach(i => result = result * i);
                     result = CalcFactorial(n) / result;
                     Console.WriteLine("Ответ; {0}", result);
                     Console.ReadLine();
